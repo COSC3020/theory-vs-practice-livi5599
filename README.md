@@ -16,11 +16,11 @@ Add your answers to this markdown file.
 
 Bullet 1
 
-1. Asymptotic analysis is theoretical, as it describes algorithm behavior as the input reaches infinity.  Actual performance is empirical, as it describes algorithm behavior with a specific set of inputs.  
+1. Asymptotic analysis is theoretical, as it describes algorithm behavior as the input reaches infinity.  Actual performance is empirical, as it describes algorithm behavior with a specific set of inputs.  The two are different, as actual performance depends on constants and machine performance, whereas asymptotic analysis ignores those factors.
 
 2. Actual performance is affected by hardware, software, and the characteristics of the input data, whereas asymptotic analysis is primarily affected by the input size.
 
-3. Asymptotic analysis takes into account inputs reaching infinity.  This can be misleading, as it doesn’t consider small inputs, so the results of those inputs may not be accurately presented.
+3. In addition to ignoring constants, asymptotic analysis also ignores lower-order terms, which can be misleading when compared to actual performance since when lower-order terms are accounted for, they can have a decent effect on the runtime.
 
 Bullet 2
 
@@ -30,11 +30,14 @@ For a balanced binary tree, finding the same element in a tree of 10,000 element
 
 Bullet 3
 
-1. It could have taken much longer because the tree was very unbalanced, meaning the algorithm has to go through most, if not all of the nodes.  This causes a large difference because as mentioned above, if the tree is balanced it takes roughly 6.65 seconds, whereas when it is unbalanced it can take roughly 50 seconds.
+1. It could have taken much longer because the tree was very unbalanced, meaning the algorithm has to go through most, if not all of the nodes.  This causes a large difference, as with a very unbalanced tree, the search time can approach O(n) instead of O(logn), which can explain why the time took significantly longer than expected.
 
-2. The hardware specifications, such as CPU speed and memory size, have an affect on actual performance, no matter what input size, so it is possible that during the runtime the computer was doing many other tasks in the background, causing the time to take considerably longer than expected.
+2. Memory or caching issues could come into play.  With a larger tree, it may no longer fit entirely in the CPU cache, causing cache misses and slower memory access time.  As the algorithm continues to access nodes stored in slower memory, this could cause a significant increase in the search time.
 
-3. The software environment, such as the operating system and the compiler, have an effect on actual performance, no matter what input size.  If used on a different operating system or if a different compiler was used, the time could be shortened.
-
+3. If other processes were consuming large amounts of CPU, memory, or I/O resources while the search was running, this could greatly slow down the performance.  In addition, since the larger tree requires a large amount of memory, the system could start using virtual memory, leading to much slower performance compared to when searching a smaller tree.
 
 I received help from ChatGPT on 1.3 and 2.  For 1.3, I asked ChatGPT the question listed in the assignment.  Regarding 2, ChatGPT gave me the number of seconds it can take to find an element in a balanced binary tree of 10,000 elements.
+
+When adjusting 1.1, I got help from Jacob in lab.  He brought up how I should go into more detail about how they are different and how asymptotic analysis ignores constants.
+When adjusting 1.3, I got help from ChatGPT.  I asked it the question asked in the assignment and used one of it's responses to help me add to my original response.
+For 3, I got help from ChatGPT.  I asked it how I could further elaborate on/edit my answer and used it's response to help me write my answers.
