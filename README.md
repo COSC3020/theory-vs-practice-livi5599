@@ -16,7 +16,8 @@ Add your answers to this markdown file.
 
 Bullet 1
 
-1. Asymptotic analysis is theoretical, as it describes algorithm behavior with a set of unspecific inputs.  It doesn’t always take into account the size of the input it is dealing with.  Actual performance is empirical, as it describes algorithm behavior with a specific set of inputs.  The two are different, as actual performance depends on constants and machine performance, whereas asymptotic analysis ignores those factors.
+1. Asymptotic analysis is theoretical, as it describes algorithm behavior with a set of unspecific inputs.  Actual performance is empirical, as it describes algorithm behavior with a specific set of inputs.  The two are different, as actual performance depends on constants and machine performance, whereas asymptotic analysis ignores those factors.
+
 
 2. Actual performance is affected by hardware, software, and the characteristics of the input data, whereas asymptotic analysis is primarily affected by the input size.
 
