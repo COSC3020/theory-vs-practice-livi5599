@@ -31,7 +31,7 @@ For a balanced binary tree, finding the same element in a tree of 10,000 element
 
 Bullet 3
 
-1. It could have taken much longer because the tree was very unbalanced, meaning the algorithm has to go through most, if not all of the nodes.  This causes a large difference, as with a very unbalanced tree, the search time can approach O(n) instead of O(logn).  This alone doesn’t fully account for the large jump from 5 seconds to 100 seconds.  Additional overheads such as memory issues or implementation inefficiencies combined with the very unbalanced tree could make the time take significantly longer.
+1. It could have taken much longer because the tree was very unbalanced, meaning the algorithm has to go through most, if not all of the nodes.  This causes a large difference, as with a very unbalanced tree, the search time can approach O(n) instead of O(logn).  This alone doesn’t fully account for the large jump from 5 seconds to 100 seconds.  Additional overheads such as memory issues, like insufficient space, or the use of an inefficient compiler combined with the very unbalanced tree could make the time take significantly longer.
 
 2. Memory or caching issues could come into play.  With a larger tree, it may no longer fit entirely in the CPU cache, causing cache misses and slower memory access time.  As the algorithm continues to access nodes stored in slower memory, this could cause a significant increase in the search time.
 
@@ -42,4 +42,4 @@ I received help from ChatGPT on 1.3 and 2.  For 1.3, I asked ChatGPT the questio
 
 When adjusting 1.1, I got help from Jacob in lab.  He brought up how I should go into more detail about how they are different and how asymptotic analysis ignores constants.
 When adjusting 1.3, I got help from ChatGPT.  I asked it the question asked in the assignment and used one of it's responses to help me add to my original response.
-For 3, I got help from ChatGPT.  I asked it how I could further elaborate on/edit my answer and used it's response to help me write my answers.
+For 3, I got help from ChatGPT and Ali.  I asked how I could further elaborate on/edit my answer and used their responses to help me write my answers.
