@@ -31,7 +31,7 @@ For a balanced binary tree, finding the same element in a tree of 10,000 element
 
 Bullet 3
 
-1. It could have taken much longer because the tree was very unbalanced, meaning the algorithm has to go through most, if not all of the nodes.  This causes a large difference, as with a very unbalanced tree, the search time can approach O(n) instead of O(logn).  This alone doesn’t fully account for the large jump from 5 seconds to 100 seconds.  Additional overheads such as memory issues, like insufficient space, or the use of an inefficient compiler combined with the very unbalanced tree could make the time take significantly longer.
+1. It could have taken much longer because the tree was very unbalanced, meaning the algorithm has to go through most, if not all of the nodes.  This causes a large difference, as with a very unbalanced tree, the search time can approach O(n) instead of O(logn).  This alone doesn’t fully account for the large jump from 5 seconds to 100 seconds.  Additional overheads such as poor memory allocation and/or the use of an inefficient compiler combined with the very unbalanced tree could make the time take significantly longer.  Different compilers handle code differently, some more efficient than others, so if an inefficient compiler were used in this situation, the way the code is run and memory is stored could cause the runtime to take significantly longer when combined with poor memory allocation and an unbalanced tree.
 
 2. Memory or caching issues could come into play.  With a larger tree, it may no longer fit entirely in the CPU cache, causing cache misses and slower memory access time.  As the algorithm continues to access nodes stored in slower memory, this could cause a significant increase in the search time.
 
