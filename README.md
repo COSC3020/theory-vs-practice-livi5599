@@ -19,7 +19,8 @@ Bullet 1
 1. Asymptotic analysis is theoretical, as it describes algorithm behavior with a set of unspecific inputs.  Actual performance is empirical, as it describes algorithm behavior with a specific set of inputs.  The two are different, as actual performance depends on constants and machine performance, whereas asymptotic analysis ignores those factors.
 
 
-2. Actual performance is affected by hardware, software, and the characteristics of the input data, whereas asymptotic analysis is primarily affected by the input size.
+2. Actual performance is affected by hardware, software, and the characteristics of the input data, whereas asymptotic analysis is primarily affected by the input size.  Asymptotic analysis is also affected by the characteristics of the input data, but in a theoretical sense, as it assumes random input, whereas actual performance takes into account real-world input characteristics such as specific distributions, clustering, or ordering of data.  Combining these real-world factors with hardware and software, they affect actual performance much more than the effect of the theoretical sense of input data characteristics on asymptotic analysis, which is why asymptotic analysis is primarily affected by the input size.
+
 
 3. In addition to ignoring constants, asymptotic analysis also ignores lower-order terms, which can be misleading when compared to actual performance since when lower-order terms are accounted for, they can have a decent effect on the runtime.
 
@@ -31,7 +32,7 @@ For a balanced binary tree, finding the same element in a tree of 10,000 element
 
 Bullet 3
 
-1. It could have taken much longer because the tree was very unbalanced, meaning the algorithm has to go through most, if not all of the nodes.  This causes a large difference, as with a very unbalanced tree, the search time can approach O(n) instead of O(logn).  This alone doesn’t fully account for the large jump from 5 seconds to 100 seconds.  When combined with an unbalanced tree, disk paging in virtual memory can cause a significantly longer runtime since I/O overhead is notably increased.  If a system doesn’t have enough physical memory to hold a tree, it will use virtual memory, meaning part of the tree will be held in the disk rather than the RAM.  Accessing memory in the disk is much slower than accessing it directly from the RAM, so combining this with an unbalanced tree can result in a drastically longer runtime, accounting for the jump from 5 seconds to 100 seconds.
+1. It could have taken much longer because the tree was very unbalanced, meaning the algorithm has to go through most, if not all of the nodes.  This causes a large difference, as with a very unbalanced tree, the search time can approach O(n) instead of O(logn).  This alone doesn’t fully account for the large jump from 5 seconds to 100 seconds.  When combined with searching an unbalanced tree of 10,000 elements, the use of poorly implemented recursive calls would cause the runtime to be considerably longer.  An example of this is the use of redundant recursive calls.  A poorly implemented search may explore both the left and right subtrees when it is only necessary to explore one subtree.  This, especially when combined with an unbalanced tree, would cause the runtime to be much longer than expected.
 
 2. Memory or caching issues could come into play.  With a larger tree, it may no longer fit entirely in the CPU cache, causing cache misses and slower memory access time.  As the algorithm continues to access nodes stored in slower memory, this could cause a significant increase in the search time.
 
